@@ -1,6 +1,6 @@
 const solution = require('./solution');
 
-describe('part1', () => {
+describe('part1Nice', () => {
   let validList = [
     'ugknbfddgicrmopn',
     'aaa'
@@ -8,7 +8,7 @@ describe('part1', () => {
 
   validList.forEach((input) => {
     test(input, () => {
-      expect(solution.part1(input)).toBe(true);
+      expect(solution.part1Nice(input)).toBe(true);
     });
   })
 
@@ -20,12 +20,12 @@ describe('part1', () => {
 
   invalidList.forEach((input) => {
     test(input, () => {
-      expect(solution.part1(input)).toBe(false);
+      expect(solution.part1Nice(input)).toBe(false);
     });
   })
 });
 
-describe('part2', () => {
+describe('part2Nice', () => {
   let validList = [
     'qjhvhtzxzqqjkmpb',
     'xxyxx'
@@ -33,7 +33,7 @@ describe('part2', () => {
 
   validList.forEach((input) => {
     test(input, () => {
-      expect(solution.part2(input)).toBe(true);
+      expect(solution.part2Nice(input)).toBe(true);
     });
   })
 
@@ -44,7 +44,7 @@ describe('part2', () => {
 
   invalidList.forEach((input) => {
     test(input, () => {
-      expect(solution.part2(input)).toBe(false);
+      expect(solution.part2Nice(input)).toBe(false);
     });
   })
 });
