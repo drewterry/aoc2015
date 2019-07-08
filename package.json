@@ -1,0 +1,14 @@
+{
+  "scripts":{
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "name": "aoc2015",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:drewterry/aoc2015.git",
+  "author": "Drew Terry <drew.terry@skookum.com>",
+  "license": "MIT"
+}
