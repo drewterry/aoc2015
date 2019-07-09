@@ -30,7 +30,7 @@ function parseCommands(input) {
 
 function evalCmd(out, commands) {
   if(cache[out]) {
-    console.log('C ' + out + ' = ' + cache[out])
+    // console.log('C ' + out + ' = ' + cache[out])
     return cache[out];
   } else {
     const cmd = commands.find((cmd) => cmd.out === out)
@@ -45,7 +45,7 @@ function evalCmd(out, commands) {
     }
 
     expr = `${in0}${cmd.op ? cmd.op : ''}${in1}`
-    console.log('  ' + cmd.out + ' = ' + expr)
+    // console.log(' ' + cmd.out + ' = ' + expr)
     cache[cmd.out] = uint16(eval(expr));
     return uint16(eval(expr));
   }
@@ -62,13 +62,19 @@ function part1(input) {
 // NOT y -> i`;
 
   commands =  parseCommands(input);
-  console.log(commands);
 
   return evalCmd('a', commands);
 }
 
 function part2(input) {
-  return false;
+  const a = part1(input);
+  cache = {}
+  
+  commands =  parseCommands(input);
+  const cmdB = commands.find((cmd) => cmd.out === 'b')
+  cmdB.in0 = a
+
+  return evalCmd('a', commands);
 }
 
 module.exports = {
